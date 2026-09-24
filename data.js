@@ -11,6 +11,14 @@ const PORTFOLIO = {
   team: "IUT · Computer Science & Engineering",
   focus: "AI/ML · Full-Stack · Mobile",
   status: "Open to offers",
+  // Wanted-poster details for the One Piece theme (one-piece/index.html)
+  pirate: {
+    epithet: "Helmsman of Latent Space",
+    crewRole: "Navigator & Shipwright", // steers models, builds apps
+    bounty: "1,500,000,000",
+    dream: "To build AI that people actually rely on, and ship it to every sea.",
+    photo: "", // optional: path to your photo for the wanted poster, e.g. "../photo.jpg"
+  },
   // Words cycled in the hero headline
   taglines: ["LLM-powered apps", "RAG pipelines", "full-stack web apps", "cross-platform mobile apps"],
   intro:

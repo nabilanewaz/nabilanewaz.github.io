@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nabila Newaz | Wanted: AI/ML Engineer &amp; Full-Stack Developer</title>
+  <meta name="description" content="One Piece–themed portfolio of Nabila Newaz, a CSE undergraduate at IUT working on applied AI/ML research, LLM applications and full-stack engineering." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&family=Caveat:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Top route: a ship sails along as you scroll -->
+  <div class="log-route-bar" aria-hidden="true">
+    <div class="log-route"></div>
+    <div class="log-ship" id="logShip"></div>
+  </div>
+
+  <!-- Log Pose on the wrist: points to the next island -->
+  <a href="#about" class="log-pose" id="logPose" aria-label="Sail to the next island">
+    <span class="lp-device" id="lpDevice"></span>
+    <span class="lp-label"><small>Log Pose · next island</small><b id="lpNext">East Blue</b></span>
+  </a>
+
+  <!-- Pops up when you eat a Devil Fruit -->
+  <div class="fruit-toast" id="fruitToast" role="status" aria-live="polite"></div>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="logo" aria-label="Back to top">
+        <span class="logo-hat" id="logoHat"></span>
+        <span class="logo-text" id="logoText"></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact" class="btn btn-small">Join the crew</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="stars" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-main">
+          <p class="hero-kicker reveal"><span class="news-coo" id="newsCoo"></span> World Economic Journal: <em>A new Supernova appears in Paradise!</em></p>
+          <h1 class="hero-name reveal" id="heroName"></h1>
+          <p class="epithet reveal" id="heroEpithet"></p>
+          <p class="hero-role reveal" id="heroRole"></p>
+          <h2 class="hero-title reveal">I build <span class="typed" id="typed"></span><span class="cursor">|</span></h2>
+          <p class="hero-intro reveal" id="heroIntro"></p>
+          <div class="hero-actions reveal">
+            <a href="#projects" class="btn">See my adventures</a>
+            <a href="#" class="btn btn-ghost" id="resumeBtn" target="_blank" rel="noopener">Resume</a>
+          </div>
+          <div class="hero-socials reveal" id="heroSocials"></div>
+        </div>
+
+        <aside class="wanted" id="wanted" aria-label="Wanted poster">
+          <p class="wanted-title">WANTED</p>
+          <div class="wanted-photo" id="wantedPhoto"></div>
+          <p class="wanted-doa">DEAD OR ALIVE</p>
+          <p class="wanted-name" id="wantedName"></p>
+          <p class="wanted-bounty"><span class="berry">฿</span><span id="wantedBounty"></span>-</p>
+          <p class="wanted-marine">MARINE</p>
+        </aside>
+      </div>
+      <div class="fruit-float" id="fruitFloat"></div>
+      <div class="hero-ship" id="heroShip" aria-hidden="true"></div>
+      <div class="waves" id="waves" aria-hidden="true"></div>
+    </section>
+
+    <!-- Grand Line voyage map -->
+    <nav class="voyage-map" aria-label="Voyage map">
+      <div class="container">
+        <p class="map-title">⚓ Chart your course through the Grand Line</p>
+        <ol class="islands" id="islandMap"></ol>
+      </div>
+    </nav>
+
+    <!-- About -->
+    <section id="about" class="section container" data-island="0">
+      <p class="kicker reveal"><span>East Blue</span> Where the adventure begins</p>
+      <h2 class="section-title reveal">About me</h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <div id="aboutText"></div>
+          <blockquote class="dream" id="dream"></blockquote>
+        </div>
+        <div class="stats reveal" id="stats"></div>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research" class="section container" data-island="1">
+      <p class="kicker reveal"><span>Ohara</span> Island of scholars · Road Poneglyph</p>
+      <h2 class="section-title reveal">Research</h2>
+      <article class="poneglyph reveal" id="researchCard"></article>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section container" data-island="2">
+      <p class="kicker reveal"><span>Water 7</span> City of shipwrights · Adventure arcs</p>
+      <h2 class="section-title reveal">Projects</h2>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section container" data-island="3">
+      <p class="kicker reveal"><span>Grand Line</span> Voyage log</p>
+      <h2 class="section-title reveal">Experience</h2>
+      <ol class="voyage" id="timeline"></ol>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section container" data-island="4">
+      <p class="kicker reveal"><span>Rusukaina</span> Two years of training · Devil Fruits &amp; Haki</p>
+      <h2 class="section-title reveal">Skills</h2>
+      <div class="skills-grid" id="skillsGrid"></div>
+    </section>
+
+    <!-- Education & Achievements -->
+    <section id="education" class="section container" data-island="5">
+      <p class="kicker reveal"><span>Sabaody</span> Where Supernovas make their name</p>
+      <h2 class="section-title reveal">Education &amp; Achievements</h2>
+      <div class="edu-grid">
+        <div class="edu-list" id="eduList"></div>
+        <div class="achievements" id="achievements"></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section container contact" data-island="6">
+      <p class="kicker kicker-center reveal"><span>Laugh Tale</span> The final island</p>
+      <div class="snail reveal" id="snail" aria-hidden="true"></div>
+      <p class="ring reveal" aria-hidden="true">Puru puru puru… <em>Gacha!</em></p>
+      <h2 class="contact-title reveal">Join the crew!</h2>
+      <p class="contact-text reveal">
+        I'm open to AI/ML and software engineering roles, research collaborations and internships.
+        Whether you have an opportunity or just want to say hi, my Den Den Mushi is always on.
+      </p>
+      <div class="contact-actions reveal">
+        <a class="btn btn-large" id="contactBtn" href="#">Email me</a>
+        <button type="button" class="btn btn-ghost btn-large" id="copyEmailBtn">Take my Vivre Card</button>
+      </div>
+      <div class="vivre reveal">
+        <p class="vivre-label">Vivre Card</p>
+        <p class="vivre-email" id="contactEmail"></p>
+        <p class="vivre-note">It always points back to me.</p>
+      </div>
+      <p class="copy-status mono" id="copyStatus" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-quote">“The One Piece… <b>is real!</b>”</p>
+      <div class="footer-inner">
+        <p id="footerText"></p>
+        <div class="footer-socials" id="footerSocials"></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
