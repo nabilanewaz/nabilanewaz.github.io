@@ -11,6 +11,13 @@ const PORTFOLIO = {
   team: "IUT · Computer Science & Engineering",
   focus: "AI/ML · Full-Stack · Mobile",
   status: "Open to offers",
+  // Personnel-file details for the Attack on Titan theme (aot/index.html)
+  aot: {
+    epithet: "Humanity's Strongest Debugger",
+    rank: "Scout",
+    squad: "Special Operations Squad (Levi Squad)",
+    bugsSlain: "9,999+",
+  },
   // Wanted-poster details for the One Piece theme (one-piece/index.html)
   pirate: {
     epithet: "Helmsman of Latent Space",

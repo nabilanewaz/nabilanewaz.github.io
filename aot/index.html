@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nabila Newaz | Survey Corps: AI/ML Engineer &amp; Full-Stack Developer</title>
+  <meta name="description" content="Attack on Titan–themed portfolio of Nabila Newaz, a CSE undergraduate at IUT working on applied AI/ML research, LLM applications and full-stack engineering." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Special+Elite&family=Source+Sans+3:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Cinematic opening (plays once per visit; click or any key skips) -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro-flash"></div>
+    <div class="intro-bolt" id="introBolt"></div>
+    <p class="intro-line" id="introLine"></p>
+    <div class="intro-giant" id="introGiant"></div>
+    <div class="intro-wall"></div>
+    <div class="intro-title">
+      <span class="intro-slash"></span>
+      <p class="intro-name" id="introName"></p>
+      <p class="intro-epithet" id="introEpithet"></p>
+    </div>
+    <p class="intro-skip">Click or press any key to skip</p>
+  </div>
+
+  <!-- ODM gear: grappling cables fire where you click -->
+  <svg class="odm-layer" id="odmLayer" aria-hidden="true"></svg>
+
+  <!-- ODM cable: scroll progress -->
+  <div class="cable" aria-hidden="true"><div class="cable-line" id="cableLine"></div></div>
+
+  <!-- ODM gas gauge: drains as you scroll -->
+  <div class="gas" id="gasGauge" aria-hidden="true">
+    <span class="gas-label">ODM Gas</span>
+    <span class="gas-track"><span class="gas-fill" id="gasFill"></span></span>
+    <span class="gas-pct" id="gasPct">100%</span>
+  </div>
+
+  <!-- Captain Levi's remarks -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="logo" aria-label="Back to top">
+        <span class="logo-wings" id="logoWings"></span>
+        <span class="logo-text" id="logoText"></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact" class="btn btn-small">Enlist me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="sky" aria-hidden="true"></div>
+      <div class="sky-flash" id="skyFlash" aria-hidden="true"></div>
+      <div class="sky-bolt" id="skyBolt" aria-hidden="true"></div>
+      <div class="feathers" id="feathers" aria-hidden="true"></div>
+      <div class="giant" id="giant" aria-hidden="true"></div>
+      <div class="wall" aria-hidden="true"><span class="wall-name">Wall Maria</span></div>
+      <div class="scout-swing" id="scoutSwing" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-main">
+          <p class="hero-kicker reveal"><span class="kick-tag">Survey Corps</span> <span id="heroSquad"></span></p>
+          <h1 class="hero-name reveal" id="heroName"></h1>
+          <p class="epithet reveal" id="heroEpithet"></p>
+          <p class="hero-role reveal" id="heroRole"></p>
+          <h2 class="hero-title reveal">I build <span class="typed" id="typed"></span><span class="cursor">|</span></h2>
+          <p class="hero-intro reveal" id="heroIntro"></p>
+          <div class="hero-actions reveal">
+            <a href="#projects" class="btn">View expeditions</a>
+            <a href="#" class="btn btn-ghost" id="resumeBtn" target="_blank" rel="noopener">Resume</a>          </div>
+          <div class="hero-socials reveal" id="heroSocials"></div>
+          <p class="inspect-hint reveal">🧹 <b>Inspection day.</b> Captain Levi hid <span id="dustTotal">6</span> specks of dust on this page. Clean them all.</p>
+        </div>
+
+        <aside class="file reveal" aria-label="Personnel file">
+          <div class="file-head">
+            <span class="file-wings" id="fileWings"></span>
+            <div>
+              <p class="file-org">Survey Corps</p>
+              <p class="file-title">Personnel File</p>
+            </div>
+          </div>
+          <div class="file-body">
+            <div class="file-photo" id="filePhoto"></div>
+            <dl class="file-fields" id="fileFields"></dl>
+          </div>
+          <span class="stamp">Approved</span>
+        </aside>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section container">
+      <p class="kicker reveal"><span>File 01</span> Personnel file</p>
+      <h2 class="section-title reveal">About me</h2>
+      <div class="about-grid">
+        <div class="about-text reveal" id="aboutText"></div>
+        <div class="stats reveal" id="stats"></div>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research" class="section container">
+      <p class="kicker reveal"><span>File 02</span> Squad Leader Hange's lab · Titan research</p>
+      <h2 class="section-title reveal">Research</h2>
+      <article class="lab reveal" id="researchCard"></article>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section container">
+      <p class="kicker reveal"><span>File 03</span> Expeditions beyond the Walls</p>
+      <h2 class="section-title reveal">Projects</h2>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section container">
+      <p class="kicker reveal"><span>File 04</span> Deployments</p>
+      <h2 class="section-title reveal">Experience</h2>
+      <ol class="deploy" id="timeline"></ol>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section container">
+      <p class="kicker reveal"><span>File 05</span> ODM gear loadout</p>
+      <h2 class="section-title reveal">Skills</h2>
+      <div class="skills-grid" id="skillsGrid"></div>
+    </section>
+
+    <!-- Education & Achievements -->
+    <section id="education" class="section container">
+      <p class="kicker reveal"><span>File 06</span> 104th Training Corps · Commendations</p>
+      <h2 class="section-title reveal">Education &amp; Achievements</h2>
+      <div class="edu-grid">
+        <div class="edu-list" id="eduList"></div>
+        <div class="achievements" id="achievements"></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section container contact">
+      <p class="kicker kicker-center reveal"><span>Final orders</span> Enlistment</p>
+      <div class="tea reveal" id="tea" aria-hidden="true"></div>
+      <h2 class="contact-title reveal">Dedicate your heart!</h2>
+      <p class="contact-text reveal">
+        I'm open to AI/ML and software engineering roles, research collaborations and internships.
+        Pour a cup of black tea and send word. I'll answer promptly, and cleanly.
+      </p>
+      <div class="contact-actions reveal">
+        <a class="btn btn-large" id="contactBtn" href="#">Email me</a>
+        <button type="button" class="btn btn-ghost btn-large" id="copyEmailBtn">Copy address</button>
+      </div>
+      <p class="contact-email reveal"><span class="mono" id="contactEmail"></span></p>
+      <p class="copy-status mono" id="copyStatus" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <blockquote class="footer-quote">
+        “The only thing we're allowed to do is believe that we won't regret the choice we made.”
+        <cite>Captain Levi</cite>
+      </blockquote>
+      <div class="footer-inner">
+        <p id="footerText"></p>
+        <div class="footer-socials" id="footerSocials"></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
