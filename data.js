@@ -29,26 +29,26 @@ const PORTFOLIO = {
   // Words cycled in the hero headline
   taglines: ["LLM-powered apps", "RAG pipelines", "full-stack web apps", "cross-platform mobile apps"],
   intro:
-    "Computer Science & Engineering undergraduate at IUT working across applied AI/ML research and full-stack engineering, from activation steering for LLM reasoning to shipping production web and mobile apps.",
+    "Computer Science & Engineering graduate from IUT working across applied AI/ML research and full-stack engineering, from activation steering for LLM reasoning to shipping production web and mobile apps.",
   location: "Dhaka, Bangladesh",
-  email: "nabilanewaz@iut-dhaka.edu",
+  email: "newaz.nabila06@gmail.com",
   resumeUrl: "resume.pdf", // save your CV as resume.pdf in this folder, or set to "" to hide the button
 
   socials: [
     { label: "GitHub", url: "https://github.com/nabilanewaz" },
     { label: "LinkedIn", url: "https://linkedin.com/in/nabilanewaz" },
-    { label: "Email", url: "mailto:nabilanewaz@iut-dhaka.edu" },
+    { label: "Email", url: "mailto:newaz.nabila06@gmail.com" },
   ],
 
   about: [
-    "I'm a Computer Science & Engineering undergraduate at the Islamic University of Technology (IUT) with hands-on experience in both applied AI/ML research and full-stack software engineering.",
+    "I'm a Computer Science & Engineering graduate of the Islamic University of Technology (IUT) with hands-on experience in both applied AI/ML research and full-stack software engineering.",
     "I've done research on activation steering for LLM reasoning, built RAG pipelines and LLM-driven applications with Gemini, Llama, LangChain and FAISS, and shipped production web and mobile apps across React/Next.js, Node.js/FastAPI and PostgreSQL/MongoDB.",
     "I'm comfortable across the whole ML lifecycle and the full engineering stack, and I take a structured, detail-oriented approach to validating both model outputs and shipped features.",
   ],
 
   stats: [
     // "delta" is optional and shows as a green timing gap next to the value
-    { value: "8", label: "Projects across AI, web & mobile" },
+    { value: "9", label: "Projects across AI, web & mobile" },
     { value: "3", label: "Internships in AI/ML, mobile & data" },
     { value: "50+", label: "Languages, frameworks & tools" },
   ],
@@ -70,9 +70,10 @@ const PORTFOLIO = {
     "AI / ML": ["LLMs (Gemini, Llama, Groq, Qwen)", "LangChain", "Prompt Design", "RAG Pipelines", "Activation Steering", "LoRA", "FAISS", "PyTorch", "TensorFlow", "Keras", "HuggingFace"],
     "Computer Vision": ["CNNs", "OpenCV"],
     Frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Flutter", "Responsive UI", "Component-Based Design", "Client-Side State", "REST API Integration"],
-    "Backend & APIs": ["FastAPI", "Flask", "Node.js", "Express.js", "REST APIs", "JWT Auth"],
+    "Backend & APIs": ["FastAPI", "Flask", "Django", "Node.js", "Express.js", "REST APIs", "JWT Auth", "Prisma", "Zod"],
     Databases: ["PostgreSQL", "MySQL", "MongoDB", "Firebase", "Firestore", "SQL"],
-    "DevOps & Cloud": ["Vercel CI/CD", "Docker", "Supabase", "Git", "GitHub"],
+    "DevOps & Cloud": ["Vercel CI/CD", "Docker", "Docker Compose", "Supabase", "Neon", "Git", "GitHub"],
+    Testing: ["Vitest", "Supertest", "Unit & Integration Testing", "Race & Mutation Testing"],
     "AI-Assisted Development": ["Claude Code", "OpenAI Codex", "Cursor", "GitHub Copilot", "Lovable", "Code Review", "Testing & Validation"],
     Tools: ["VS Code", "Postman", "Jupyter Notebook", "Kaggle", "Colab", "Figma", "Excel", "Cloudinary"],
   },
@@ -80,14 +81,23 @@ const PORTFOLIO = {
   // Add a repo URL to "github" or a deployed URL to "live" and an icon link appears on the card.
   projects: [
     {
+      title: "Dhaka Tesla Pool",
+      subtitle: "Ride-Pooling Platform",
+      description:
+        "A full-stack ride-pooling platform where passengers heading the same way share a 3-seat vehicle and each pays an individual fare. Overbooking is impossible even under concurrent bookings (atomic conditional UPDATE, row locks in a fixed order and a database CHECK constraint, proved with race and mutation tests). Trips and rides are linked state machines with an append-only audit trail, covered by 125 unit and integration tests. It runs with one docker compose up and is deployed on Vercel with Neon PostgreSQL.",
+      tags: ["Next.js", "Express 5", "TypeScript", "PostgreSQL", "Prisma", "Zod", "Vitest", "Docker", "Vercel"],
+      github: "https://github.com/nabilanewaz/Lesgoo",
+      live: "https://tesla-pool-indol.vercel.app",
+      featured: true,
+    },
+    {
       title: "PaperVault",
       subtitle: "AI-Powered Research Paper Management Platform",
       description:
         "A live research platform that uses prompt chains to a Groq-hosted LLM for automated summaries, flashcards and semantic paper recommendations. It deploys on every push through Vercel CI/CD with a Supabase backend, and secures user data with Supabase Auth (JWT) and Postgres Row-Level Security.",
       tags: ["Groq API", "React", "TypeScript", "Vite", "Supabase", "Vercel CI/CD"],
-      github: "",
-      live: "",
-      featured: true,
+      github: "https://github.com/nabilanewaz/papervault",
+      live: "https://papervault-theta.vercel.app",
     },
     {
       title: "Personalized Study Planner",
@@ -188,10 +198,10 @@ const PORTFOLIO = {
       degree: "B.Sc. in Computer Science and Engineering",
       school: "Islamic University of Technology (IUT), Gazipur",
       detail:
-        "Coursework: Artificial Intelligence, Machine Learning, Data Mining, Digital Image Processing, Pattern Recognition, Data Structures, Algorithms, DBMS, Probability & Statistics, Linear Algebra, Operating Systems, Computer Networks, Theory of Computing, Algorithm Engineering",
+        "CGPA 3.71 · Coursework: Artificial Intelligence, Machine Learning, Data Mining, Digital Image Processing, Pattern Recognition, Data Structures, Algorithms, DBMS, Probability & Statistics, Linear Algebra, Operating Systems, Computer Networks, Theory of Computing, Algorithm Engineering",
     },
-    { degree: "Higher Secondary Certificate (HSC)", school: "Rajuk Uttara Model College, Dhaka", detail: "" },
-    { degree: "Secondary School Certificate (SSC)", school: "Rajuk Uttara Model College, Dhaka", detail: "" },
+    { degree: "Higher Secondary Certificate (HSC)", school: "Rajuk Uttara Model College, Dhaka", detail: "GPA 5.00" },
+    { degree: "Secondary School Certificate (SSC)", school: "Rajuk Uttara Model College, Dhaka", detail: "GPA 5.00" },
   ],
 
   achievements: [
